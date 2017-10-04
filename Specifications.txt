@@ -12,7 +12,7 @@ Requirements:
  - users can create a profile 
  - users can add comments about one race and rate it
  - users can see some statistics over years about F1 and races
- - users can see some photos from different races and season
- - users can see all pilots and vote for his favourite or give him a note
- - users can see the classment for pilots and teams
- - users can see details about a race that has taken place (qualifications, line up, some incidents from race, overtaking, winner and podium)
+ - users can see some photos from different races and seasons
+ - users can see all pilots and vote for their favourite or give him a note
+ - users can see the rankings for pilots and teams
+ - users can see details about a race that took place (qualifications, line up, some incidents from race, overtaking, winner and podium)

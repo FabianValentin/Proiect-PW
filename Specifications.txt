@@ -2,17 +2,12 @@ Web Application Name:
 Formula 1 Then & Now
 
 Specification:
- - LogIn & Register
- - Form(create, edit, details)
+ - LogIn & Register Forms
  - Gallery 
- - Rating
- - Statistics & History
+ - Rating Pilots
 
 Requirements:
- - users can create a profile 
- - users can add comments about one race and rate it
- - users can see some statistics over years about F1 and races
- - users can see some photos from different races and seasons
+ - users can see some photos from different races 
  - users can see all pilots and vote for their favourite or give him a note
- - users can see the rankings for pilots and teams
+ - users can see the rankings for pilots after votes
  - users can see details about a race that took place (qualifications, line up, some incidents from race, overtaking, winner and podium)

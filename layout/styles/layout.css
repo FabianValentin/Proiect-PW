@@ -1,20 +1,21 @@
 @charset "utf-8";
-/*
-Template Name: Modular Business
-Author: <a href="http://www.os-templates.com/">OS Templates</a>
-Author URI: http://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: http://www.os-templates.com/template-terms
-File: Layout CSS
-*/
 
 @import url("navi.css");
 @import url("forms.css");
 @import url("tables.css");
 @import url("featured_slide.css");
+@import "compass/css3";
 
 html{overflow-y:scroll;}
-body{margin:0; padding:0; font-size:12px; font-family:verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; background-color:#333333;}
+body{
+	background:url(../../images/demo/background.png) repeat 50% 0 #000;
+	margin:0; 
+	padding:0; 
+	font-size:12px; 
+	font-family:verdana, Arial, Helvetica, sans-serif; 
+	color:#FFFFFF; 
+	background-color:#333333;
+	}
 
 .justify{text-align:justify;}
 .bold{font-weight:bold;}
@@ -27,9 +28,6 @@ br.clear{clear:both; margin-top:-15px;}
 
 a{outline:none; text-decoration:none;}
 
-.fl_left, .imgl{float:left;}
-.fl_right, .imgr{float:right;}
-
 img{margin:0; padding:0; border:0;}
 .imgl, .imgr{border:1px solid #666666; padding:5px; color:#666666; background-color:#FFFFFF;}
 .imgl{margin:0 15px 0 0; clear:left;}
@@ -38,9 +36,9 @@ img{margin:0; padding:0; border:0;}
 /* ----------------------------------------------Wrapper------------------------------------- */
 
 div.wrapper{display:block; width:100%; margin:0; text-align:left;}
-div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0 0 15px 0; padding:0; font-size:20px; font-weight:normal; font-family:Georgia, "Times New Roman", Times, serif;}
+div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0 0 0 0; padding:20px; font-size:20px; font-weight:normal; font-family:Georgia, "Times New Roman", Times, serif;}
 .col1, .col1 a{color:#FFFFFF; background-color:#D51D29;}
-.col2{color:#FFFFFF; background-color:#000000;}
+.col2{color:#FFFFFF;}
 .col3{color:#999999; background-color:#4C4C4E; border-bottom:1px solid #D51D29;}
 .col4{color:#FFFFFF; background-color:#232323; border-bottom:1px solid #D51D29;}
 .col4 a{color:#FFFFFF; background-color:#232323;}
@@ -66,8 +64,6 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 #header{padding:20px 0;}
 #header h1, #header p{margin:0; padding:0;}
-#header .fl_left{display:block; float:left; width:400px;}
-#header .fl_right{display:block; float:right; width:468px;}
 #header h1{margin:0; font-size:36px; border:none;}
 #header h1 a{color:#FFFFFF; background-color:#000000;}
 
@@ -80,11 +76,10 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 /* ----------------------------------------------Content------------------------------------- */
 
-#container{padding:20px 0; line-height:1.4em;}
-#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{padding-bottom:8px; border-bottom:1px dotted #CCCCCC;}
+#container{padding:20px 0; line-height:2.4em;}
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{padding-bottom:10px; border-bottom:1px dotted #CCCCCC;}
 #content{display:block; float:left; width:600px;}
 
-/* Comments */
 
 #comments{margin-bottom:40px;}
 #comments .commentlist{margin:0; padding:0;}
@@ -137,7 +132,134 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #footer .last{margin:0;}
 #newsletter{display:block; float:left; width:300px;}
 
-/* ----------------------------------------------Copyright------------------------------------- */
+.container {
+    position: relative;
+    width: 50%;
+}
 
-#copyright{padding:15px 0;}
-#copyright p{margin:0; padding:0;}
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+	border-bottom: 0
+}
+
+.article {
+    text-align: center;
+}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:center;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 20%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+button:hover {
+    opacity: 0.8;
+}

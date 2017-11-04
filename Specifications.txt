@@ -1,10 +1,18 @@
 Web Application Name:
 Formula 1 Then & Now
 
-Specification:
- - LogIn & Register Forms
- - Gallery 
- - Rating Pilots
+Specifications:
+ 
+Frontend framework: 
+1.HTML
+2.CSS
+3.JavaScript
+
+Backend framework: PHP
+
+Baza de date: Mysql-Xampp
+
+Editor de text: Notepad++
 
 Requirements:
  - users can see some photos from different races 

@@ -1,3 +1,5 @@
+<?php include('../../connect.php');?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Formula 1 Then & Now</title>
@@ -17,7 +19,7 @@
     <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="Pilots.html">Pilots</a><span>Vote you hero</span></li>
-      <li><a href="Season.html">Season</a><span>Follow the season</span></li>
+      <li><a href="Season.php">Season</a><span>Follow the season</span></li>
       <li><a href="#">History</a>
         <ul>
           <li><a href="History_Season.html">Season</a></li>
@@ -33,20 +35,23 @@
 <div id="SignUp"class="wrapper col5">
 	<button type="button"onclick="myFunction()" >Switch to log in</button>
 	<h2>Signup Form</h2>
-	<form style="border:1px solid #ccc">
+	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">
 	<div class="container">
+		<label><b>Name</b></label>
+		<input type="text" placeholder="Enter your entire name" name="name" required>
+		
+		<label><b>Username</b></label>
+		<input type="text" placeholder="Enter username" name="username" value="<?php echo $usernam?>"required>
+	
 		<label><b>Email</b></label>
-		<input type="text" placeholder="Enter Email" name="email" required>
+		<input type="text" placeholder="Enter Email" name="email"  value="<?php echo $mail?>"required>
 
 		<label><b>Password</b></label>	
 		<input type="password" placeholder="Enter Password" name="psw" required>
 
-		<label><b>Repeat Password</b></label>
-		<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
 		<div class="clearfix">
 		<button type="button" class="cancelbtn">Cancel</button>
-		<button type="submit" class="signupbtn">Sign Up</button>
+		<button type="submit" name ="register" class="signupbtn">Sign Up</button>
 		</div>
 	</div>
 	</form>

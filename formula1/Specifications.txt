@@ -1,0 +1,21 @@
+Web Application Name:
+Formula 1 Then & Now
+
+Specifications:
+ 
+Frontend framework: 
+1.HTML
+2.CSS
+3.JavaScript
+
+Backend framework: PHP
+
+Baza de date: Mysql-Xampp
+
+Editor de text: Notepad++
+
+Requirements:
+ - users can see some photos from different races 
+ - users can see all pilots and vote for their favourite or give him a note
+ - users can see the rankings for pilots after votes
+ - users can see details about a race that took place (qualifications, line up, some incidents from race, overtaking, winner and podium)

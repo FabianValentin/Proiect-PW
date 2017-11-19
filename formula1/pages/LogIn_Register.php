@@ -23,6 +23,9 @@
 	<button type="button" onclick="myFunction()" >Switch to Log in</button>
 	<h2>Signup Form</h2>
 	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">
+	
+	<?php include('errors.php'); ?>
+	
 	<div class="container">
 		<label><b>Name</b></label>
 		<input type="text" placeholder="Enter your entire name" name="name" required>
@@ -34,7 +37,10 @@
 		<input type="text" placeholder="Enter Email" name="email" required>
 
 		<label><b>Password</b></label>	
-		<input type="password" placeholder="Enter Password" name="psw" required>
+		<input type="password" placeholder="Enter Password" name="psw1" required>
+		
+		<label><b>Verify Password</b></label>	
+		<input type="password" placeholder="Enter Password Again" name="psw2" required>
 
 		<div class="clearfix">
 		<button type="button" class="cancelbtn">Cancel</button>
@@ -51,6 +57,9 @@
 	<button  type="button" onclick="myFunction()">Switch to Sign up</button>
 	<h2>Login Form</h2>
 	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">>
+	
+	<?php include('errors.php'); ?>
+	
 	<div class="container">
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>

@@ -8,6 +8,6 @@ include "../connect.php";
 	
 	date_default_timezone_set('Europe/Bucharest');
 	$curr_date=date('Y/m/d h:i:sa',time());
-	$sql = "INSERT INTO user_comment_relation (comment,idUser,comm_date) VALUES ('$comm','$name','$curr_date')";
+	$sql = "INSERT INTO user_comment_relation (comment,nameUser,comm_date) VALUES ('$comm','$name','$curr_date')";
 	mysqli_query($con,$sql);
   }

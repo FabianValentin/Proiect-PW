@@ -1,3 +1,18 @@
+<?php 
+	session_start(); 
+
+	if (!isset($_SESSION['username'])) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: LogIn_Register.php');
+	}
+
+	if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['username']);
+		header("location: LogIn_Register.php");
+	}
+
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Formula 1 Then & Now</title>
@@ -7,24 +22,29 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="#"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="indexLogIn.php"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
 <div class="wrapper col3">
   <div id="topnav">
     <ul>
-      <li><a href="index.php">Home</a></li>
-      <li><a href="Pilots.php">Pilots</a><span>Vote you hero</span></li>
-      <li><a href="Season.php">Season</a><span>Follow the season</span></li>
+      <li><a href="indexLogIn.php">Home</a></li>
+      <li><a href="PilotsLogIn.php">Pilots</a><span>Vote you hero</span></li>
+      <li><a href="SeasonLogIn.php">Season</a><span>Follow the season</span></li>
       <li><a href="">History</a>
         <ul>
-          <li><a href="History_Season.html">Season</a></li>
-          <li><a href="History_Pilots.html">Pilots</a></li>
-		  <li class="active"><a href="History_Teams.html">Teams</a></li>
+          <li><a href="History_SeasonLogIn.php">Season</a></li>
+          <li><a href="History_PilotsLogIn.php">Pilots</a></li>
+		  <li class="active"><a href="History_TeamsLogIn.php">Teams</a></li>
         </ul>
+		  <li><!-- logged in user information -->
+			<?php  if (isset($_SESSION['username'])) : ?>
+				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+				<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+			<?php endif ?>
+		  </li>
       </li>
-  	  <li><a href="LogIn_Register.php">Do you want to SignUp/LogIn?</a></li>
     </ul>
     <br class="clear" />
   </div>

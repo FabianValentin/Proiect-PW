@@ -8,8 +8,7 @@
   $dbhost='localhost';
   $username = 'root';
   $password='';
-  $db='formula1database';
-
+  $db='formula1database'; 
   //connect to the database
   $con = mysqli_connect("$dbhost","$username","","$db");	
   

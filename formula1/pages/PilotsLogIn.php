@@ -56,30 +56,47 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-	<?php include("rating.php")?>
       <h1>Vote your favourite pilot</h1>
 		<div class="container">
 			<img src="../pilots/alo.jpg" alt="Avatar" class="image" style="width:100%">
 			<div class="middle">
 				<div class="text">Fernando Alonso </div>
 			</div>
-			  <form action="result.php" method="post">
-			  	<div class="stars">
-				<input type="radio" name="starAlo" class="star-1" id="star-1" value=1/>
+			<form action="#" method="post">
+				<div class="stars">
+				<input type="radio" name="stars" class="star-1" id="star-1"  value=1>
 				<label class="star-1" for="star-1">1</label>
-				<input type="radio" name="starAlo" class="star-2" id="star-2" value=2 />
+				<input type="radio" name="stars" class="star-2" id="star-2"  value=2>
 				<label class="star-2" for="star-2">2</label>
-				<input type="radio" name="starAlo" class="star-3" id="star-3" value=3/>
+				<input type="radio" name="stars" class="star-3" id="star-3"  value=3>
 				<label class="star-3" for="star-3">3</label>
-				<input type="radio" name="starAlo" class="star-4" id="star-4" value=4/>
+				<input type="radio" name="stars" class="star-4" id="star-4"  value=4>
 				<label class="star-4" for="star-4">4</label>
-				<input type="radio" name="starAlo" class="star-5" id="star-5" value=5/>
+				<input type="radio" name="stars" class="star-5" id="star-5"  value=5>
 				<label class="star-5" for="star-5">5</label>
 				<span></span>
 				</div>
-			  </form>
-			  <a href="PilotsLogIn.php" ><input name="rate" type="button" id="submit" value="Rate me" /></a>
-			</div>
+				<input name="rateAlo" type="submit" id="rate" value="Rate Me" />
+			</form>
+			  <?php
+				include "../connect.php";
+				if(isset($_POST['rateAlo'])){
+					$selected_val = $_POST['stars'];  // Storing Selected Value In Variable
+					$result = mysqli_query($con, "select * from pilots WHERE id = 1");
+					$points=0;
+					$votes=0;
+					while($row = mysqli_fetch_assoc($result)) {
+						$points = $row["points"];					
+						$votes = $row["votes"];
+					}
+					$selected_val=$selected_val+$points;
+					$votes=$votes+1;
+					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 1";
+					mysqli_query($con,$sql);
+
+				}
+			  ?>
+			 </div>
 		<div class="container" class = >
 			<img src="../pilots/bot.jpg" alt="Avatar" class="image" style="width:100%">
 			<div class="middle">
@@ -87,19 +104,38 @@
 			</div>
 			<form id="ratingsForm">
 				<div class="stars">
-				<input type="radio" name="star" class="star-1" id="star-1" />
+				<input type="radio" name="star" class="star-1" id="star-1" value=1>
 				<label class="star-1" for="star-1">1</label>
-				<input type="radio" name="star" class="star-2" id="star-2" />
+				<input type="radio" name="star" class="star-2" id="star-2" value=2>
 				<label class="star-2" for="star-2">2</label>
-				<input type="radio" name="star" class="star-3" id="star-3" />
+				<input type="radio" name="star" class="star-3" id="star-3" value=3>
 				<label class="star-3" for="star-3">3</label>
-				<input type="radio" name="star" class="star-4" id="star-4" />
+				<input type="radio" name="star" class="star-4" id="star-4" value=4>
 				<label class="star-4" for="star-4">4</label>
-				<input type="radio" name="star" class="star-5" id="star-5" />
+				<input type="radio" name="star" class="star-5" id="star-5" value=5>
 				<label class="star-5" for="star-5">5</label>
 				<span></span>
 				</div>
+				<input name="rateBot" type="submit" id="rate" value="Rate Me" />
 			</form>
+			<?php
+				include "../connect.php";
+				if(isset($_POST['rateBot'])){
+					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
+					$result = mysqli_query($con, "select * from pilots WHERE id = 2");
+					$points=0;
+					$votes=0;
+					while($row = mysqli_fetch_assoc($result)) {
+						$points = $row["points"];					
+						$votes = $row["votes"];
+					}
+					$selected_val=$selected_val+$points;
+					$votes=$votes+1;
+					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 2";
+					mysqli_query($con,$sql);
+
+				}
+			  ?>
 		</div>
 		<div class="container" class = >
 			<img src="../pilots/vet.jpg" alt="Avatar" class="image" style="width:100%">
@@ -120,7 +156,26 @@
 				<label class="star-5" for="star-5">5</label>
 				<span></span>
 				</div>
+				<input name="rateVet" type="submit" id="rate" value="Rate Me" />
 			</form>
+			<?php
+				include "../connect.php";
+				if(isset($_POST['rateVet'])){
+					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
+					$result = mysqli_query($con, "select * from pilots WHERE id = 3");
+					$points=0;
+					$votes=0;
+					while($row = mysqli_fetch_assoc($result)) {
+						$points = $row["points"];					
+						$votes = $row["votes"];
+					}
+					$selected_val=$selected_val+$points;
+					$votes=$votes+1;
+					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 3";
+					mysqli_query($con,$sql);
+
+				}
+			  ?>
 		</div>
 		<div class="container" class = >
 			<img src="../pilots/ham.jpg" alt="Avatar" class="image" style="width:100%">
@@ -141,7 +196,26 @@
 				<label class="star-5" for="star-5">5</label>
 				<span></span>
 				</div>
+				<input name="rateHam" type="submit" id="rate" value="Rate Me" />
 			</form>
+			<?php
+				include "../connect.php";
+				if(isset($_POST['rateHam'])){
+					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
+					$result = mysqli_query($con, "select * from pilots WHERE id = 4");
+					$points=0;
+					$votes=0;
+					while($row = mysqli_fetch_assoc($result)) {
+						$points = $row["points"];					
+						$votes = $row["votes"];
+					}
+					$selected_val=$selected_val+$points;
+					$votes=$votes+1;
+					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 4";
+					mysqli_query($con,$sql);
+
+				}
+			  ?>
 		</div>
       <h2>Table</h2>
       <table summary="Summary Here" cellpadding="0" cellspacing="0">

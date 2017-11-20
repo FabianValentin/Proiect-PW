@@ -1,6 +1,6 @@
 <?php 
 	include "../connect.php";
-	$result = mysqli_query($con, "select * from pilots ORDER BY points limit 4");
+	$result = mysqli_query($con, "select * from pilots ORDER BY points DESC limit 4");
 	$str0 = "";
 	$str1 = "";
 	$str2 = "";

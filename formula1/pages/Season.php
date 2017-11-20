@@ -33,7 +33,8 @@
   <div id="container">
     <h1><font size="7">Current Season</font><action="Season.php"></h1>
     <ul>	
-		<?php include("racesDB.php")?>
+		
+<?php include("racesDB.php")?>
 	</ul>
   </div>
 </div>

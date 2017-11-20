@@ -15,8 +15,8 @@
   </div>
 </div>
 
-
-<div id="SignUp"class="wrapper col5" style="display:block">
+<div class="wrapper col5"><div id="container">
+<div id="SignUp" class="wrapper col5" style="display:block">
 <div>
 	<button type="button" class="signupbtn" onclick="location.href='index.php';">Back to index</button>
 </div>
@@ -72,7 +72,8 @@
   </div>
 </form>
 </div>
-
+</div>
+</div>
 <div class="wrapper col6" >
   <div id="footer">
     <div id="newsletter">

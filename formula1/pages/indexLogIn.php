@@ -45,12 +45,14 @@
           <li><a href="History_PilotsLogIn.php">Pilots</a></li>
 		  <li class="last"><a href="History_TeamsLogIn.php">Teams</a></li>
         </ul>
+		<div>
 		  <li><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
 				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
 				<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
 			<?php endif ?>
 		  </li>
+		 </div>
       </li>
     </ul>
     <br class="clear" />

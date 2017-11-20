@@ -1,0 +1,87 @@
+.gallery {
+  width: 1800px;
+  margin: 0 auto;
+  padding: 80px;
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.myPic{
+	width: 310px;
+	height: 400px;
+}
+.containerH {
+    position: relative;
+    width: 50%;
+}
+
+.imageH {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middleH {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.containerH:hover .imageH {
+  opacity: 0.3;
+}
+
+.containerH:hover .middleH {
+  opacity: 1;
+}
+
+.textH {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.flex-containerH {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-containerH > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+	border-bottom: 0
+}
+
+.articleH {
+    text-align: center;
+}
+.navH {background:#eee;}
+
+.navH ul {
+    list-style-type: none;
+    padding: 0;
+}
+.navH ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .navH {text-align:center;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .articleH {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+}

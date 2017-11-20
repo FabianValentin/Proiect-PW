@@ -67,3 +67,15 @@ form, .content {
 	border: 1px solid #3c763d;
 	margin-bottom: 20px;
 }
+
+.races {
+	text-align: center;
+	font-size: 30px;
+}
+
+.texto{
+	padding-top: 15px;
+	text-align: left;
+	font-size: 15px;
+	line-height: 130%;
+}

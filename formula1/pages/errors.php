@@ -1,7 +1,13 @@
+
+
+
 <?php  if (count($errors) > 0) : ?>
 	<div class="error">
+		
+		<p align="center"><font size="5" color="red">Errors</p>
 		<?php foreach ($errors as $error) : ?>
-			<p><?php echo $error ?></p>
+			<li align="center"><font size="3" color="red"><?php echo $error ?></li>
 		<?php endforeach ?>
+		
 	</div>
 <?php  endif ?>

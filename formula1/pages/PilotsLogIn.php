@@ -108,6 +108,7 @@
 			<div class="middle">
 				<div class="text">Valtteri Bottas </div>
 			</div>
+			<?php if (isset($_SESSION['username'])) : ?>
 			<form action="#" method="post">
 			<?php
 				include "../connect.php";
@@ -143,6 +144,7 @@
 				</div>
 				<input name="rateBot" type="submit" id="rate" value="Rate Me" />
 			</form>
+			<?php endif ?>
 		</div>
 
 		<div class="container">
@@ -150,6 +152,7 @@
 			<div class="middle">
 				<div class="text">Sebastian Vettel </div>
 			</div>
+			<?php if (isset($_SESSION['username'])) : ?>
 			<form action="#" method="post">
 			<?php
 				include "../connect.php";
@@ -185,6 +188,7 @@
 				</div>
 				<input name="rateVet" type="submit" id="rate" value="Rate Me" />
 			</form>
+			<?php endif ?>
 		</div>
 		
 		<div class="container">
@@ -192,6 +196,7 @@
 			<div class="middle">
 				<div class="text">Louis Hamilton </div>
 			</div>
+			<?php if (isset($_SESSION['username'])) : ?>
 			<form action="#" method="post">
 			<?php
 				include "../connect.php";
@@ -227,6 +232,7 @@
 				</div>
 				<input name="rateHam" type="submit" id="rate" value="Rate Me" />
 			</form>
+			<?php endif ?>
 		</div>
 	
       <h2>Clasamentul favoritilor</h2>

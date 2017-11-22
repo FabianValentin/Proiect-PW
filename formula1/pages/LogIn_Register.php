@@ -43,12 +43,12 @@
 </div>
 
 <!-- ####################################################################################################### -->
-<div class="wrapper col5"><div id="container">
-<div id="SignUp" class="wrapper col5" style="display:block">
+<div class="wrapper col5">
+ <div id="container">
+   <?php include('errors.php'); ?>
+  <div id="SignUp" class="wrapper col5" style="display:block">
 	<div align="center" class="title">Formular de inregistrare</div><pre></pre>
 	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc" class="c">
-	
-	<?php include('errors.php'); ?>
 	
 	<div class="cont">
 		<label class="formtext">Nume</label>
@@ -88,7 +88,7 @@
 		<label class="formtext">Parola</label>
 		<input type="password" placeholder="Introdu parola" name="pswd" required>
        
-		<div align="center"><button type="button" class="signin" name="login">Autentificare</button></div>
+		<div align="center"><button type="submit" class="signin" name="login">Autentificare</button></div>
 
   </div>
 </form>

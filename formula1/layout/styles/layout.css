@@ -199,12 +199,13 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     text-align: center;
+	
 }
 
 .flex-container > * {
-    padding: 15px;
+	padding:0;
     -webkit-flex: 1 100%;
-    flex: 1 100%;
+    flex: 0 100%;
 	border-bottom: 0
 }
 
@@ -213,13 +214,16 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 }
 .nav {background:#eee;}
 
-.nav ul {
+.nav li {
     list-style-type: none;
     padding: 0;
 }
-.nav ul a {
-    text-decoration: none;
+
+.nav ul {
+   color: black;
 }
+
+
 
 @media all and (min-width: 768px) {
     .nav {text-align:center;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
@@ -263,6 +267,17 @@ button {
 .signin {
     background-color: black;
 	color: white;
+	text-align: center;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 23%;
+	-webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	font-family: 'El Messiri';
+	font-size: 13px;
 }
 
 /* Extra styles for the cancel button */

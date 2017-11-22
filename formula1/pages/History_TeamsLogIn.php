@@ -51,19 +51,23 @@
 <div class="wrapper col5">
    <div id="container">
     <h1 align="center"><font size="6" >Cele mai importante echipe</font></h1>
+	<p></p>
     <div class="flex-container">
+		<font size="5"><a style="color:black" href="https://ro.wikipedia.org/wiki/Red_Bull_Racing" >Red Bull Racing</a></style></font>
 		<nav class="nav">
 			<ul>
+				<h1>Logo</h1>
 				<li><img src="../teams/redbull.jpg" alt="" /></li>
+				<h1>Monopost</h1>
 				<li><img src="../teams/redbullCar.jpg" alt="" /></li>
-				<li><font size="4"><a href="https://ro.wikipedia.org/wiki/Red_Bull_Racing">Red Bull Racing</a></font></li>
-
+				
 			</ul>
 		</nav>
 		<article class="article">
 		   <div class="flex-container">
 			<nav class="nav">
 				<ul>
+				<h1>Piloti</h1>
 				<li><img src="../teams/rici.jpg" alt="" /></li>
 				<h1>Daniel Ricciardo</h1>
 				<li><img src="../teams/max.jpg" alt="" /></li>
@@ -73,20 +77,22 @@
 		   </div>
 		</article>
    </div>
-
+	<p></p>
    <div class="flex-container">
+		<font size="5" style="samp"><a style="color:black" href="https://ro.wikipedia.org/wiki/Scuderia_Ferrari">Scuderia Ferrari</a></font>
 		<nav class="nav">
 			<ul>
+				<h1>Logo</h1>
 				<li><img src="../teams/ferrari.png" alt="" /></li>
+				<h1>Monopost</h1>
 				<li><img src="../teams/ferrariCar.jpg" alt="" /></li>
-				<li><font size="4" style="samp"><a href="https://ro.wikipedia.org/wiki/Scuderia_Ferrari">Scuderia Ferrari</a></font></li>
-
 			</ul>
 		</nav>
 		<article class="article">
 		  <div class="flex-container">
 		   <nav class="nav">
 			<ul>
+				<h1>Piloti</h1>
 				<li><img src="../pilots/vet.jpg" alt="" /></li>
 				<h1>Sebastian Vettel</h1>
 				<li><img src="../teams/kimi.jpg" alt="" /></li>

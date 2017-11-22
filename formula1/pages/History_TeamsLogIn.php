@@ -1,10 +1,6 @@
 <?php 
 	session_start(); 
 
-	if (!isset($_SESSION['username'])) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: LogIn_Register.php');
-	}
 
 	if (isset($_GET['logout'])) {
 		session_destroy();
@@ -29,19 +25,22 @@
 <div class="wrapper col3">
   <div id="topnav">
     <ul>
-      <li><a href="indexLogIn.php">Home</a></li>
-      <li><a href="PilotsLogIn.php">Pilots</a><span>Vote you hero</span></li>
-      <li><a href="SeasonLogIn.php">Season</a><span>Follow the season</span></li>
-      <li><a href="">History</a>
+      <li><a href="indexLogIn.php">Acasa</a></li>
+      <li><a href="PilotsLogIn.php">Piloti</a><span>Voteaza-ti favorit</span></li>
+      <li><a href="SeasonLogIn.php">Sezon</a><span>Urmareste sezonul</span></li>
+      <li><a href="">Istorie</a>
         <ul>
-          <li><a href="History_SeasonLogIn.php">Season</a></li>
-          <li><a href="History_PilotsLogIn.php">Pilots</a></li>
-		  <li class="active"><a href="History_TeamsLogIn.php">Teams</a></li>
+          <li><a href="History_SeasonLogIn.php">Sezon</a></li>
+          <li><a href="History_PilotsLogIn.php">Piloti</a></li>
+		  <li class="active"><a href="History_TeamsLogIn.php">Echipe</a></li>
         </ul>
-		  <li><!-- logged in user information -->
+		<?php if (!isset($_SESSION['username'])) :?>
+		<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
+		<?php endif ?>
+		  <li style="float: right;"><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
-				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
+				<p> <a href="index.php?logout='1'" style="color: red;">Parasire</a> </p>
 			<?php endif ?>
 		  </li>
       </li>
@@ -51,7 +50,7 @@
 </div>
 <div class="wrapper col5">
    <div id="container">
-    <h1 align="center"><font size="6" >The most important teams</font></h1>
+    <h1 align="center"><font size="6" >Cele mai importante echipe</font></h1>
     <div class="flex-container">
 		<nav class="nav">
 			<ul>
@@ -97,7 +96,34 @@
 	      </div>
 		</article>
    </div>
-   
+</div>
+<div class="wrapper col6">
+  <div id="footer">
+    <div id="newsletter">
+      <h2>Ramai informat!</h2>
+      <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
+      <form action="Pilots.php" method="post">
+        <fieldset>
+          <legend>News Letter</legend>
+		  <?php include('newslatter.php');?>
+          <input type="text" value="Introdu emailul aici&hellip;" name="emailU"  onfocus="this.value=(this.value=='Introdu emailul aici&hellip;')? '' : this.value ;" />
+          <input type="submit" name="news_go" id="news_go" value="GO" />
+        </fieldset>
+      </form>
+    </div>
+    <div class="footbox">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="#">Numar 0770 746 398</a></li>
+        <li><a href="#">Email codau.fabian@yahoo.com</a></li>
+        <li><a href="#">Starada Maresal.Al.Averescu nr.49</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>
 </div>
 </body>
 </html>

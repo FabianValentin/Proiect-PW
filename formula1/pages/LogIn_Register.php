@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
 <script type="text/javascript" src="../layout/scripts/jquery.toggleForm.js"></script>
+
 </head>
 <body id="top">
 <div class="wrapper col2">
@@ -18,33 +19,33 @@
 <div class="wrapper col5"><div id="container">
 <div id="SignUp" class="wrapper col5" style="display:block">
 <div>
-	<button type="button" class="signupbtn" onclick="location.href='index.php';">Back to index</button>
+	<button type="button" class="signupbtn" onclick="location.href='indexLogIn.php';">Inapoi la acasa</button>
 </div>
-	<button type="button" onclick="myFunction()" >Switch to Log in</button>
-	<h2>Signup Form</h2>
+	<button type="button" onclick="myFunction()" >Schimba la autentificare</button>
+	<h2>Formular de inregistrare</h2>
 	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">
 	
 	<?php include('errors.php'); ?>
 	
 	<div class="container">
-		<label><b>Name</b></label>
-		<input type="text" placeholder="Enter your entire name" name="name" required>
+		<label><b>Nume</b></label>
+		<input type="text" placeholder="Introdu numele complet" name="name" required>
 		
-		<label><b>Username</b></label>
-		<input type="text" placeholder="Enter username" name="username" required>
+		<label><b>Nume de utilizator</b></label>
+		<input type="text" placeholder="Introdu numele de utilizator" name="username" required>
 	
 		<label><b>Email</b></label>
-		<input type="text" placeholder="Enter Email" name="email" required>
+		<input type="text" placeholder="Introdu emailul" name="email" required>
 
-		<label><b>Password</b></label>	
-		<input type="password" placeholder="Enter Password" name="psw1" required>
+		<label><b>Parola</b></label>	
+		<input type="password" placeholder="Introdu parola" name="psw1" required>
 		
-		<label><b>Verify Password</b></label>	
-		<input type="password" placeholder="Enter Password Again" name="psw2" required>
+		<label><b>Verificare parola</b></label>	
+		<input type="password" placeholder="Introdu parola din nou" name="psw2" required>
 
 		<div class="clearfix">
-		<button type="button" class="cancelbtn">Cancel</button>
-		<button type="submit" name ="register" class="signupbtn">Sign Up</button>
+		<button type="button" class="cancelbtn">Anulare</button>
+		<button type="submit" name ="register" class="signupbtn">Inregistrare</button>
 		</div>
 	</div>
 	</form>
@@ -52,49 +53,49 @@
 
 <div id="LogIn" class="wrapper col5" style="display:none">
 <div>
-	<button type="button" class="signupbtn" onclick="location.href='index.php';">Back to index</button>
+	<button type="button" class="signupbtn" onclick="location.href='indexLogIn.php';">Inapoi la acasa</button>
 </div>
-	<button  type="button" onclick="myFunction()">Switch to Sign up</button>
-	<h2>Login Form</h2>
+	<button  type="button" onclick="myFunction()">Schimba la inregistrare</button>
+	<h2>Autentificare</h2>
 	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">>
 	
 	<?php include('errors.php'); ?>
 	
 	<div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label><b>Nume de utilizator</b></label>
+    <input type="text" placeholder="Introdu numele de utilizator" name="uname" required>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pswd" required>
+    <label><b>Parola</b></label>
+    <input type="password" placeholder="Introdu parola" name="pswd" required>
         
-    <button type="submit" name="login">Login</button>
+    <button type="submit" name="login">Autentificare</button>
 
   </div>
 </form>
 </div>
 </div>
 </div>
-<div class="wrapper col6" >
+
+<div class="wrapper col6">
   <div id="footer">
     <div id="newsletter">
-      <h2>Stay In The Know !</h2>
-      <p>Please enter your email to join our mailing list</p>
-      <form action="#" method="post">
+      <h2>Ramai informat!</h2>
+      <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
+      <form action="LogIn_Register.php" method="post">
         <fieldset>
           <legend>News Letter</legend>
-          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+		  <?php include('newslatter.php');?>
+          <input type="text" value="Introdu emailul aici&hellip;" name="emailU"  onfocus="this.value=(this.value=='Introdu emailul aici&hellip;')? '' : this.value ;" />
           <input type="submit" name="news_go" id="news_go" value="GO" />
         </fieldset>
       </form>
-      <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
     </div>
-  
     <div class="footbox">
       <h2>Contact</h2>
       <ul>
-        <li>Number 077x xxx xxx</li>
-        <li>Email codau.fabian@yahoo.com</li>
-        <li>Street Maresal.A.Av. nr.49</li>
+        <li><a href="#">Numar 0770 746 398</a></li>
+        <li><a href="#">Email codau.fabian@yahoo.com</a></li>
+        <li><a href="#">Starada Maresal.Al.Averescu nr.49</a></li>
       </ul>
     </div>
     <br class="clear" />

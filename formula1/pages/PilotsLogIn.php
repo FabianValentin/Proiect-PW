@@ -2,15 +2,10 @@
 
 	session_start();
 
-	if (!isset($_SESSION['username'])) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: LogIn_Register.php');
-	}
-
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		header("location: index.php");
+		header("location: indexLogIn.php");
 	}
 
 ?>
@@ -32,22 +27,27 @@
 <div class="wrapper col3">
   <div id="topnav">
     <ul>
-      <li><a href="indexLogIn.php">Home</a></li>
-      <li class="active"><a href="PilotsLogIn.php">Pilots</a><span>Vote your hero</span></li>
-      <li><a href="SeasonLogIn.php">Season</a><span>Follow the season</span></li>
-      <li><a href="#">History</a>
+      <li><a href="indexLogIn.php">Acasa</a></li>
+      <li class="active"><a href="PilotsLogIn.php">Piloti</a><span>Voteaza-ti favoritul</span></li>
+      <li><a href="SeasonLogIn.php">Sezon</a><span>Urmareste sezonul</span></li>
+      <li><a href="#">Istorie</a>
         <ul>
-          <li><a href="History_SeasonLogIn.php">Season</a></li>
-          <li><a href="History_PilotsLogIn.php">Pilots</a></li>
-		  <li><a href="History_TeamsLogIn.php">Teams</a></li>
+          <li><a href="History_SeasonLogIn.php">Sezon</a></li>
+          <li><a href="History_PilotsLogIn.php">Piltoi</a></li>
+		  <li><a href="History_TeamsLogIn.php">Echipe</a></li>
         </ul>
-		<li>
+		<?php if (!isset($_SESSION['username'])) :?>
+		<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
+		<?php endif ?>
+		<div>
+		<li style="float: right;">
 			<!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
-				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">Parasire</a> </p>
 			<?php endif ?>
 		</li>
+		</div>
       </li>
     </ul>
     <br class="clear" />
@@ -56,68 +56,58 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-      <h1>Vote your favourite pilot</h1>
+      <h1>Voteaza-ti pilotul favorit</h1>
 		<div class="container">
 			<img src="../pilots/alo.jpg" alt="Avatar" class="image" style="width:100%">
 			<div class="middle">
 				<div class="text">Fernando Alonso </div>
 			</div>
-			<form action="#" method="post">
-				<div class="stars">
-				<input type="radio" name="stars" class="star-1" id="star-1"  value=1>
-				<label class="star-1" for="star-1">1</label>
-				<input type="radio" name="stars" class="star-2" id="star-2"  value=2>
-				<label class="star-2" for="star-2">2</label>
-				<input type="radio" name="stars" class="star-3" id="star-3"  value=3>
-				<label class="star-3" for="star-3">3</label>
-				<input type="radio" name="stars" class="star-4" id="star-4"  value=4>
-				<label class="star-4" for="star-4">4</label>
-				<input type="radio" name="stars" class="star-5" id="star-5"  value=5>
-				<label class="star-5" for="star-5">5</label>
-				<span></span>
-				</div>
-				<input name="rateAlo" type="submit" id="rate" value="Rate Me" />
-			</form>
-			  <?php
-				include "../connect.php";
-				if(isset($_POST['rateAlo'])){
-					$selected_val = $_POST['stars'];  // Storing Selected Value In Variable
-					$result = mysqli_query($con, "select * from pilots WHERE id = 1");
-					$points=0;
-					$votes=0;
-					while($row = mysqli_fetch_assoc($result)) {
-						$points = $row["points"];					
-						$votes = $row["votes"];
+			<?php if (isset($_SESSION['username'])) : ?>
+				<form action="#" method="post">
+				<?php
+					include "../connect.php";
+					if(isset($_POST['rateAlo'])){
+						$selected_val = $_POST['star1'];  // Storing Selected Value In Variable
+						$result = mysqli_query($con, "select * from pilots WHERE id = 1");
+						$points=0;
+						$votes=0;
+						while($row = mysqli_fetch_assoc($result)) {
+							$points = $row["points"];					
+							$votes = $row["votes"];
+						}
+						$selected_val=$selected_val+$points;
+						$votes=$votes+1;
+						$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 1";
+						mysqli_query($con,$sql);
 					}
-					$selected_val=$selected_val+$points;
-					$votes=$votes+1;
-					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 1";
-					mysqli_query($con,$sql);
-
-				}
-			  ?>
-			 </div>
-		<div class="container" class = >
+				?>
+					<div class="stars">
+					<input type="radio" name="star1" class="star-1" id="star-1"  value=1>
+					<label class="star-1" for="star-1">1</label>
+					
+					<input type="radio" name="star1" class="star-2" id="star-2"  value=2>
+					<label class="star-2" for="star-2">2</label>
+				
+					<input type="radio" name="star1" class="star-3" id="star-3"  value=3>
+					<label class="star-3" for="star-3">3</label>
+				
+					<input type="radio" name="star1" class="star-4" id="star-4"  value=4>
+					<label class="star-4" for="star-4">4</label>
+				
+					<input type="radio" name="star1" class="star-5" id="star-5"  value=5>
+					<label class="star-5" for="star-5">5</label>
+					<span></span>
+					</div>
+					<input name="rateAlo" type="submit" id="rate" value="Rate Me" />
+				</form>
+			<?php endif ?>
+		</div>
+		<div class="container">
 			<img src="../pilots/bot.jpg" alt="Avatar" class="image" style="width:100%">
 			<div class="middle">
 				<div class="text">Valtteri Bottas </div>
 			</div>
-			<form id="ratingsForm">
-				<div class="stars">
-				<input type="radio" name="star" class="star-1" id="star-1" value=1>
-				<label class="star-1" for="star-1">1</label>
-				<input type="radio" name="star" class="star-2" id="star-2" value=2>
-				<label class="star-2" for="star-2">2</label>
-				<input type="radio" name="star" class="star-3" id="star-3" value=3>
-				<label class="star-3" for="star-3">3</label>
-				<input type="radio" name="star" class="star-4" id="star-4" value=4>
-				<label class="star-4" for="star-4">4</label>
-				<input type="radio" name="star" class="star-5" id="star-5" value=5>
-				<label class="star-5" for="star-5">5</label>
-				<span></span>
-				</div>
-				<input name="rateBot" type="submit" id="rate" value="Rate Me" />
-			</form>
+			<form action="#" method="post">
 			<?php
 				include "../connect.php";
 				if(isset($_POST['rateBot'])){
@@ -126,6 +116,7 @@
 					$points=0;
 					$votes=0;
 					while($row = mysqli_fetch_assoc($result)) {
+						echo $row["name"];
 						$points = $row["points"];					
 						$votes = $row["votes"];
 					}
@@ -136,95 +127,31 @@
 
 				}
 			  ?>
-		</div>
-		<div class="container" class = >
-			<img src="../pilots/vet.jpg" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
-				<div class="text">Sebastian Vettel </div>
-			</div>
-			<form id="ratingsForm">
 				<div class="stars">
-				<input type="radio" name="star" class="star-1" id="star-1" />
-				<label class="star-1" for="star-1">1</label>
-				<input type="radio" name="star" class="star-2" id="star-2" />
-				<label class="star-2" for="star-2">2</label>
-				<input type="radio" name="star" class="star-3" id="star-3" />
-				<label class="star-3" for="star-3">3</label>
-				<input type="radio" name="star" class="star-4" id="star-4" />
-				<label class="star-4" for="star-4">4</label>
-				<input type="radio" name="star" class="star-5" id="star-5" />
-				<label class="star-5" for="star-5">5</label>
+				<input type="radio" name="star" class="star-1" id="star1" value=1>
+				<label class="star-1" for="star1">1</label>
+				<input type="radio" name="star" class="star-2" id="star2" value=2>
+				<label class="star-2" for="star2">2</label>
+				<input type="radio" name="star" class="star-3" id="star3" value=3>
+				<label class="star-3" for="star3">3</label>
+				<input type="radio" name="star" class="star-4" id="star4" value=4>
+				<label class="star-4" for="star4">4</label>
+				<input type="radio" name="star" class="star-5" id="star5" value=5>
+				<label class="star-5" for="star5">5</label>
 				<span></span>
 				</div>
-				<input name="rateVet" type="submit" id="rate" value="Rate Me" />
+				<input name="rateBot" type="submit" id="rate" value="Rate Me" />
 			</form>
-			<?php
-				include "../connect.php";
-				if(isset($_POST['rateVet'])){
-					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
-					$result = mysqli_query($con, "select * from pilots WHERE id = 3");
-					$points=0;
-					$votes=0;
-					while($row = mysqli_fetch_assoc($result)) {
-						$points = $row["points"];					
-						$votes = $row["votes"];
-					}
-					$selected_val=$selected_val+$points;
-					$votes=$votes+1;
-					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 3";
-					mysqli_query($con,$sql);
-
-				}
-			  ?>
 		</div>
-		<div class="container" class = >
-			<img src="../pilots/ham.jpg" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
-				<div class="text">Louis Hamilton </div>
-			</div>
-			<form id="ratingsForm">
-				<div class="stars">
-				<input type="radio" name="star" class="star-1" id="star-1" />
-				<label class="star-1" for="star-1">1</label>
-				<input type="radio" name="star" class="star-2" id="star-2" />
-				<label class="star-2" for="star-2">2</label>
-				<input type="radio" name="star" class="star-3" id="star-3" />
-				<label class="star-3" for="star-3">3</label>
-				<input type="radio" name="star" class="star-4" id="star-4" />
-				<label class="star-4" for="star-4">4</label>
-				<input type="radio" name="star" class="star-5" id="star-5" />
-				<label class="star-5" for="star-5">5</label>
-				<span></span>
-				</div>
-				<input name="rateHam" type="submit" id="rate" value="Rate Me" />
-			</form>
-			<?php
-				include "../connect.php";
-				if(isset($_POST['rateHam'])){
-					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
-					$result = mysqli_query($con, "select * from pilots WHERE id = 4");
-					$points=0;
-					$votes=0;
-					while($row = mysqli_fetch_assoc($result)) {
-						$points = $row["points"];					
-						$votes = $row["votes"];
-					}
-					$selected_val=$selected_val+$points;
-					$votes=$votes+1;
-					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 4";
-					mysqli_query($con,$sql);
-
-				}
-			  ?>
-		</div>
-      <h2>Table</h2>
+	
+      <h2>Clasamentul favoritilor</h2>
       <table summary="Summary Here" cellpadding="0" cellspacing="0">
         <thead>
           <tr>
             <th>Pilot</th>
-            <th>Team</th>
-            <th>Points</th>
-            <th>Number of votes</th>
+            <th>Echipa</th>
+            <th>Puncte</th>
+            <th>Numar de voturi</th>
           </tr>
         </thead>
         <tbody>
@@ -237,17 +164,18 @@
 			<?php include("pilotsComDB.php")?>
 		 
       </div>
+	 <?php if (isset($_SESSION['username'])) : ?> 
 	  <?php include('pilotsCommInsert.php');?>
-      <h2>Write A Comment</h2>
+      <h2>Scrie un comentariu</h2>
       <div id="respond">
         <form action="PilotsLogIn.php" method="post">
           <p>
             <input type="text" name="name" id="name" value="" size="22" />
-            <label for="name"><small>Name required</small></label>
+            <label for="name"><small>Nume de utilizator(necesar)</small></label>
           </p>
           <p>
             <textarea name="comment" id="comment" cols="100%" rows="10"></textarea>
-            <label for="comment" style="display:none;"><small>Comment (required)</small></label>
+            <label for="comment" style="display:none;"><small>Comentariu(necesar)</small></label>
           </p>
           <p>
             <input name="submit" type="submit" id="submit" value="Submit Form" />
@@ -256,6 +184,7 @@
           </p>
         </form>
       </div>
+	  <?php endif ?>
     </div>
     <div class="clear"></div>
   </div>
@@ -264,28 +193,26 @@
 <div class="wrapper col6">
   <div id="footer">
     <div id="newsletter">
-      <h2>Stay In The Know !</h2>
-      <p>Please enter your email to join our mailing list</p>
-      <form action="#" method="post">
+      <h2>Ramai informat!</h2>
+      <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
+      <form action="PilotsLogIn.php" method="post">
         <fieldset>
           <legend>News Letter</legend>
-          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+		  <?php include('newslatter.php');?>
+          <input type="text" value="Introdu emailul aici&hellip;" name="emailU"  onfocus="this.value=(this.value=='Introdu emailul aici&hellip;')? '' : this.value ;" />
           <input type="submit" name="news_go" id="news_go" value="GO" />
         </fieldset>
       </form>
-      <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
     </div>
     <div class="footbox">
-      <h2>Lacus interdum</h2>
       <h2>Contact</h2>
       <ul>
-        <li><a href="#">Number 077x xxx xxx</a></li>
+        <li><a href="#">Numar 0770 746 398</a></li>
         <li><a href="#">Email codau.fabian@yahoo.com</a></li>
-        <li><a href="#">Street Mar.A.Av. nr.49</a></li>
+        <li><a href="#">Starada Maresal.Al.Averescu nr.49</a></li>
       </ul>
     </div>
     <br class="clear" />
   </div>
 </div>
 </body>
-</html>

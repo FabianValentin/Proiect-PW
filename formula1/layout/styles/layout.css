@@ -50,8 +50,8 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 /* ----------------------------------------------Generalise------------------------------------- */
 
-#topbar, #header, #topnav, #intro, #breadcrumb, #container, #footer, #copyright{display:block; position:relative; width:960px; margin:0 auto;}
-
+#topbar, #header, #intro, #breadcrumb, #container, #footer, #copyright{display:block; position:relative; width:960px; margin:0 auto;}
+#topnav {display:block; position:relative; width:960px; margin:0 auto;}
 /* ----------------------------------------------TopBar------------------------------------- */
 
 #topbar{padding:10px 0;}

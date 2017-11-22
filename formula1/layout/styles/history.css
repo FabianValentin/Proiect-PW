@@ -1,17 +1,17 @@
 .gallery {
   width: 1800px;
-  margin: 0 auto;
+  margin: 20px 20px;
   padding: 80px;
 }
 
 .gallery > div {
   position: relative;
   float: left;
-  padding: 5px;
+  padding: 50px;
 }
 
 .myPic{
-	width: 310px;
+	width: 100px;
 	height: 400px;
 }
 .containerH {

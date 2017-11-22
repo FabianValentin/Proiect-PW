@@ -2,11 +2,6 @@
 
 	session_start();
 
-	if (!isset($_SESSION['username'])) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: LogIn_Register.php');
-	}
-
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
@@ -30,19 +25,22 @@
 <div class="wrapper col3">
   <div id="topnav">
     <ul>
-      <li><a href="indexLogIn.php">Home</a></li>
-      <li><a href="PilotsLogIn.php">Pilots</a><span>Vote you hero</span></li>
-      <li><a href="SeasonLogIn.php">Season</a><span>Follow the season</span></li>
-      <li><a href="#">History</a>
+      <li><a href="indexLogIn.php">Acasa</a></li>
+      <li><a href="PilotsLogIn.php">Piloti</a><span>Voteaza-ti favoritul</span></li>
+      <li><a href="SeasonLogIn.php">Sezon</a><span>Urmareste sezonul</span></li>
+      <li><a href="#">Istoria</a>
         <ul>
-          <li><a href="History_SeasonLogIn.php">Season</a></li>
-          <li class="active"><a href="History_PilotsLogIn.php">Pilots</a></li>
-		  <li><a href="History_TeamsLogIn.php">Teams</a></li>
+          <li><a href="History_SeasonLogIn.php">Sezon</a></li>
+          <li class="active"><a href="History_PilotsLogIn.php">Piloti</a></li>
+		  <li><a href="History_TeamsLogIn.php">Echipe</a></li>
         </ul>
-		 <li><!-- logged in user information -->
+		<?php if (!isset($_SESSION['username'])) :?>
+		<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
+		<?php endif ?>
+		 <li style="float: right;"><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
 				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">logout</a> </p>
 			<?php endif ?>
 		  </li>
       </li>
@@ -93,26 +91,27 @@
 <div class="wrapper col6">
   <div id="footer">
     <div id="newsletter">
-      <h2>Stay In The Know !</h2>
-      <p>Please enter your email to join our mailing list</p>
-      <form action="#" method="post">
+      <h2>Ramai informat!</h2>
+      <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
+      <form action="SeasonLogIn.php" method="post">
         <fieldset>
           <legend>News Letter</legend>
-          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+		  <?php include('newslatter.php');?>
+          <input type="text" value="Introdu emailul aici&hellip;" name="emailU"  onfocus="this.value=(this.value=='Introdu emailul aici&hellip;')? '' : this.value ;" />
           <input type="submit" name="news_go" id="news_go" value="GO" />
         </fieldset>
       </form>
-      <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
     </div>
-   <div class="footbox">
+    <div class="footbox">
       <h2>Contact</h2>
       <ul>
-        <li><a href="#">Number 077x xxx xxx</a></li>
+        <li><a href="#">Numar 0770 746 398</a></li>
         <li><a href="#">Email codau.fabian@yahoo.com</a></li>
-        <li><a href="#">Street Mar.A.Av. nr.49</a></li>
+        <li><a href="#">Starada Maresal.Al.Averescu nr.49</a></li>
       </ul>
     </div>
     <br class="clear" />
   </div>
 </div>
 </body>
+</html>

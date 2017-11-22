@@ -1,15 +1,10 @@
 <?php 
 	session_start(); 
 
-	if (!isset($_SESSION['username'])) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: LogIn_Register.php');
-	}
-
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		header("location: LogIn_Register.php");
+		header("location: indexLogIn.php");
 	}
 
 ?>
@@ -36,23 +31,26 @@
 <div class="wrapper col3">
   <div id="topnav">
     <ul>
-      <li class="active"><a href="indexLogIn.php">Home</a></li>
-      <li><a href="PilotsLogIn.php">Pilots</a><span>Vote your hero</span></li>
-      <li><a href="SeasonLogIn.php">Season</a><span>Follow the season</span></li>
-      <li><a href="#">History</a>
+      <li class="active"><a href="indexLogIn.php">Acasa</a></li>
+      <li><a href="PilotsLogIn.php">Piloti</a><span>Voteaza-ti favoritul</span></li>
+      <li><a href="SeasonLogIn.php">Sezon</a><span>Urmareste sezonul</span></li>
+      <li><a href="#">Istorie</a>
         <ul>
-          <li><a href="History_SeasonLogIn.php">Season</a></li>
-          <li><a href="History_PilotsLogIn.php">Pilots</a></li>
-		  <li class="last"><a href="History_TeamsLogIn.php">Teams</a></li>
+          <li><a href="History_SeasonLogIn.php">Sezon</a></li>
+          <li><a href="History_PilotsLogIn.php">Piloti</a></li>
+		  <li class="last"><a href="History_TeamsLogIn.php">Echipe</a></li>
         </ul>
+		<?php if (!isset($_SESSION['username'])) :?>
+		<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
+		<?php endif ?>
 		<div>
-		  <li><!-- logged in user information -->
+		  <li style="float: right;"><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
-				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">Parasire</a> </p>
 			<?php endif ?>
 		  </li>
-		 </div>
+		</div>
       </li>
     </ul>
     <br class="clear" />
@@ -72,7 +70,7 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-      <h1 align= "center">About This Amazing Sport</h1>
+      <h1 align= "center">Despre acest sport impresionant</h1>
       <p><font size="3">  Formula 1 (abreviata F1) este o intrecere de automobilism care se
 		  organizeaza anual sub forma a doua campionate mondiale, care au loc
  		  in paralel, ambele fiind patronate de Federatia Internationala a 
@@ -97,17 +95,17 @@
     </div>
     <div id="column">
       <div class="holder">
-        <h2>News</h2>
+        <h2>Ultimele informatii</h2>
         <ul id="latestnews">
           <li><img class="imgl" src="../images/demo/images(5).jpg" alt="" />
-            <p><strong>Almost champions</strong></p>
-            <p>Hamilton at one victory to keep the title.</p>
-            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+            <p><strong>Aproape campion</strong></p>
+            <p>Hamilton este la o victorie distanta de a-si pastra titlul</p>
+            <p class="readmore"><a href="#">Continua sa citesti &raquo;</a></p>
           </li>
           <li class="last"><img class="imgl" src="../images/demo/download(3).jpg" alt="" />
-            <p><strong>Vettel, another wrong step</strong></p>
-            <p>Vettel had an another accident and lost points in front of Hamilton</p>
-            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+            <p><strong>Vettel, inca un pas gresit</strong></p>
+            <p>Vettel, inca un pas gresit</p>
+            <p class="readmore"><a href="#">Continua sa citesti &raquo;</a></p>
           </li>
         </ul>
       </div>
@@ -119,28 +117,27 @@
 <div class="wrapper col6">
   <div id="footer">
     <div id="newsletter">
-      <h2>Stay In The Know !</h2>
-      <p>Please enter your email to join our mailing list</p>
-      <form action="#" method="post">
+      <h2>Ramai informat!</h2>
+      <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
+      <form action="Pilots.php" method="post">
         <fieldset>
           <legend>News Letter</legend>
-          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+		  <?php include('newslatter.php');?>
+          <input type="text" value="Introdu emailul aici&hellip;" name="emailU"  onfocus="this.value=(this.value=='Introdu emailul aici&hellip;')? '' : this.value ;" />
           <input type="submit" name="news_go" id="news_go" value="GO" />
         </fieldset>
       </form>
-      <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
     </div>
-  
     <div class="footbox">
       <h2>Contact</h2>
       <ul>
-        <li>Number 077x xxx xxx</li>
-        <li>Email codau.fabian@yahoo.com</li>
-        <li>Street Maresal.A.Av. nr.49</li>
+        <li><a href="#">Numar 0770 746 398</a></li>
+        <li><a href="#">Email codau.fabian@yahoo.com</a></li>
+        <li><a href="#">Starada Maresal.Al.Averescu nr.49</a></li>
       </ul>
     </div>
     <br class="clear" />
   </div>
-</div>		
+</div>
 </body>
 </html>

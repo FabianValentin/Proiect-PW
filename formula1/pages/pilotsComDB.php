@@ -14,7 +14,7 @@
 		echo $str0;
 		$str0="";
 		
-		$str1 .='<div class="author"><img class="avatar" src="../images/demo/avatar.png" width="32" height="32" alt="" /><span class="name">'.$row["nameUser"].'</span> <span class="wrote">wrote:</span></div>';
+		$str1 .='<div class="author"><img class="avatar" src="../images/demo/avatar.png" width="32" height="32" alt="" /><span class="name">Utilizatorul: '.$row["nameUser"].'</span> <span class="wrote">a scris:</span></div>';
 		echo $str1;	
 		$str1="";
 		

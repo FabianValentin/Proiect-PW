@@ -5,6 +5,7 @@
 @import url("tables.css");
 @import url("featured_slide.css");
 @import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=El+Messiri);
 
 html{overflow-y:scroll;}
 body{
@@ -51,7 +52,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 /* ----------------------------------------------Generalise------------------------------------- */
 
 #topbar, #header, #intro, #breadcrumb, #container, #footer, #copyright{display:block; position:relative; width:960px; margin:0 auto;}
-#topnav {display:block; position:relative; width:960px; margin:0 auto;}
+#topnav {display:block; position:relative; width:750px; margin:0 auto;}
 /* ----------------------------------------------TopBar------------------------------------- */
 
 #topbar{padding:10px 0;}
@@ -164,11 +165,32 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
   opacity: 1;
 }
 
+.c {
+	background: url(../../images/demo/background.png) repeat 50% 0 #000;
+}
+.cont {
+	background-color: #ff4d4d;
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 25px;
+	margin: 5% auto 5% auto; /* 5% from the top */
+    width: 50%; /* Could be more or less, depending on screen size */
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 .text {
   background-color: #4CAF50;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
+}
+
+.formtext {
+	line-height: 1.3;
+	font-size: 20px;
+	font-family: 'El Messiri';
+	font-weight: bold;
 }
 
 .flex-container {
@@ -216,25 +238,42 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: white;
+	text-align: center;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 20%;
+	-webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	font-family: 'El Messiri';
+	font-size: 13px;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
+    padding: 14px 30px;
+    background-color: black;
+	color: white;
+}
+
+.signin {
+    background-color: black;
+	color: white;
+}
+
+/* Extra styles for the cancel button */
+.autentificare {
+    background-color: #ffff4d;
 }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn,.signupbtn {
     float: left;
-    width: 20%;
+    width: 30%;
 }
 
 /* Add padding to container elements */
@@ -242,6 +281,10 @@ button {
     padding: 16px;
 }
 
+.clearfix {
+	text-align: center;
+	padding-left:150px;
+}
 /* Clear floats */
 .clearfix::after {
     content: "";
@@ -275,5 +318,14 @@ form {
 
 button:hover {
     opacity: 0.8;
+}
+
+.title {
+	display:block;
+	color:red;
+	font-size:40px;
+	line-height:72px;
+	margin:0 0 -20px 0;
+	font-family: 'El Messiri';
 }
 

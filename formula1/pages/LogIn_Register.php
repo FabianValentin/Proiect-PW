@@ -15,64 +15,84 @@
     <br class="clear" />
   </div>
 </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="topnav">
+    <ul>
+      <li class="active"><a href="indexLogIn.php">Acasa</a></li>
+      <li><a href="PilotsLogIn.php">Piloti</a><span>Voteaza-ti favoritul</span></li>
+      <li><a href="SeasonLogIn.php">Sezon</a><span>Urmareste sezonul</span></li>
+      <li><a href="#">Istorie</a>
+        <ul>
+          <li><a href="History_SeasonLogIn.php">Sezon</a></li>
+          <li><a href="History_PilotsLogIn.php">Piloti</a></li>
+		  <li class="last"><a href="History_TeamsLogIn.php">Echipe</a></li>
+        </ul>
+		<div>
+		  <li style="float: right;"><!-- logged in user information -->
+			<?php  if (isset($_SESSION['username'])) : ?>
+				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">Parasire</a> </p>
+			<?php endif ?>
+		  </li>
+		</div>
+      </li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
 
+<!-- ####################################################################################################### -->
 <div class="wrapper col5"><div id="container">
 <div id="SignUp" class="wrapper col5" style="display:block">
-<div>
-	<button type="button" class="signupbtn" onclick="location.href='indexLogIn.php';">Inapoi la acasa</button>
-</div>
-	<button type="button" onclick="myFunction()" >Schimba la autentificare</button>
-	<h2>Formular de inregistrare</h2>
-	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">
+	<div align="center" class="title">Formular de inregistrare</div><pre></pre>
+	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc" class="c">
 	
 	<?php include('errors.php'); ?>
 	
-	<div class="container">
-		<label><b>Nume</b></label>
+	<div class="cont">
+		<label class="formtext">Nume</label>
 		<input type="text" placeholder="Introdu numele complet" name="name" required>
 		
-		<label><b>Nume de utilizator</b></label>
+		<label class="formtext">Nume de utilizator</label>
 		<input type="text" placeholder="Introdu numele de utilizator" name="username" required>
 	
-		<label><b>Email</b></label>
+		<label class="formtext">Email</label>
 		<input type="text" placeholder="Introdu emailul" name="email" required>
 
-		<label><b>Parola</b></label>	
+		<label class="formtext">Parola</label>	
 		<input type="password" placeholder="Introdu parola" name="psw1" required>
 		
-		<label><b>Verificare parola</b></label>	
+		<label class="formtext">Verificare parola</label>	
 		<input type="password" placeholder="Introdu parola din nou" name="psw2" required>
 
 		<div class="clearfix">
-		<button type="button" class="cancelbtn">Anulare</button>
-		<button type="submit" name ="register" class="signupbtn">Inregistrare</button>
+			<button type="button" class="cancelbtn">Anulare</button>
+			<button type="submit" name ="register" class="signupbtn">Inregistrare</button>
 		</div>
 	</div>
 	</form>
+	<pre></pre>
+	<div align="center"><button type="button" class="autentificare" onclick="myFunction()" >Schimba la autentificare</button></div>
 </div> 
-
-<div id="LogIn" class="wrapper col5" style="display:none">
-<div>
-	<button type="button" class="signupbtn" onclick="location.href='indexLogIn.php';">Inapoi la acasa</button>
-</div>
-	<button  type="button" onclick="myFunction()">Schimba la inregistrare</button>
-	<h2>Autentificare</h2>
-	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc">>
+	<div id="LogIn" class="wrapper col5" style="display:none">
+		<div align="center" class="title">Formular de autentificare</div><pre></pre>
+		<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc" class="c"> 	
 	
-	<?php include('errors.php'); ?>
+		<?php include('errors.php'); ?>
 	
-	<div class="container">
-    <label><b>Nume de utilizator</b></label>
-    <input type="text" placeholder="Introdu numele de utilizator" name="uname" required>
+		<div class="cont">
+		<label class="formtext">Nume de utilizator</label>
+		<input type="text" placeholder="Introdu numele de utilizator" name="uname" required>
 
-    <label><b>Parola</b></label>
-    <input type="password" placeholder="Introdu parola" name="pswd" required>
-        
-    <button type="submit" name="login">Autentificare</button>
+		<label class="formtext">Parola</label>
+		<input type="password" placeholder="Introdu parola" name="pswd" required>
+       
+		<div align="center"><button type="button" class="signin" name="login">Autentificare</button></div>
 
   </div>
 </form>
-</div>
+<div align="center"><button type="button" class="autentificare" onclick="myFunction()" >Schimba la inregistrare </button></div>
 </div>
 </div>
 
@@ -81,7 +101,7 @@
     <div id="newsletter">
       <h2>Ramai informat!</h2>
       <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
-      <form action="LogIn_Register.php" method="post">
+      <form action="Pilots.php" method="post">
         <fieldset>
           <legend>News Letter</legend>
 		  <?php include('newslatter.php');?>

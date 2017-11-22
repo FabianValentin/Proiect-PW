@@ -35,14 +35,16 @@
 		  <li><a href="History_TeamsLogIn.php">Echipe</a></li>
         </ul>
 		<?php if (!isset($_SESSION['username'])) :?>
-		<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
+			<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
 		<?php endif ?>
-		 <li style="float: right;"><!-- logged in user information -->
+		<div>
+		  <li style="float: right;"><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
-				<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">logout</a> </p>
+				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">Parasire</a> </p>
 			<?php endif ?>
 		  </li>
+		 </div>
       </li>
     </ul>
     <br class="clear" />
@@ -51,39 +53,7 @@
 <div class="wrapper col5">
   <div id="container">
     <h1><font size="6">The most important pilots</font></h1>
-    <div class="flex-container">
-		<nav class="nav">
-			<ul>
-				<li><img src="../pilots/vet.jpg" alt="" /></li>
-				<li><font size="4"><a href="https://ro.wikipedia.org/wiki/Sebastian_Vettel">Sebastian Vettel</a></font></li>
-			</ul>
-		</nav>
-		<article class="article">
-			<h1>Este cel mai tanar pilot care a castigat campionatul mondial de Formula 1. A cucerit titlul la piloti în sezoanele 2010, 2011,2012 si 2013 ?i totodata cu ajutorul coechipierului sau Mark Webber, a castigat titlurile mondiale la constructori în aceeasi ani 2010, 2011, 2012 respectiv 2013 pentru echipa lor Red Bull Renault. Vettel detine numeroase recorduri în Formula 1 de tipul "cel mai tanar pilot",precum: cel mai tanar pilot care a luat parte intr-o sesiune oficiala de antrenamente in marele circ,cel mai tanar pilot care a punctat în Formula 1,care a condus o cursa, care a plecat din pole position si care a castigat o cursa.</h1>
-		</article>
-	</div>
-	<div class="flex-container">
-		<nav class="nav">
-			<ul>
-				<li><img src="../pilots/ham.jpg" alt="" /></li>
-				<li><font size="4"><a href="https://ro.wikipedia.org/wiki/Lewis_Hamilton">Lewis Hamilton</a></font></li>
-			</ul>
-		</nav>
-		<article class="article">
-			<h1>El a debutat în campionatul mondial în 2007, la echipa McLaren Mercedes. Este primul pilot de culoare din Formula 1, fiind nascut în Marea Britanie dar din parinti imigranti din Grenada. Lewis si-a inceput cariera în karting în 1995, acolo unde a reusit sa se impuna cu usurinta in multe competitii la care a luat startul, fiind inca din acea perioada luat sub aripa protectoare a lui Ron Dennis si a echipei sale, McLaren, care avea sa ii finanteze cariera odata ce si-a facut debutul in Formula Renault, campionatul britanic, seria de iarna - un minicampionat care se organizeaza in lunile de iarna si unde participa de regula multi debutanti - în 2001 cand a terminat pe locul al cincilea.</h1>
-		</article>
-	</div>
-	<div class="flex-container">
-		<nav class="nav">
-			<ul>
-				<li><img src="../pilots/mic.jpg" alt="" /></li>
-				<li><font size="4"><a href="https://ro.wikipedia.org/wiki/Michael_Schumacher">Michael Schumacher</a></font></li>
-			</ul>
-		</nav>
-		<article class="article">
-		    <h1>Michael Schumacher  este un fost pilot de Formula 1. Statistic, prin prisma celor sapte titluri mondiale castigate, a celor 91 de victorii, 68 de pole position-uri si 76 de cele mai rapide tururi, Michael Schumacher este considerat drept cel mai bun pilot de Formula 1 din toate timpurile.In 2006, in urma unui sondaj efectuat de FIA, Michael Schumacher a fost votat de catre fanii Formulei 1 drept cel mai popular pilot care a evoluat vreodata in acest sport.Michael Schumacher mai are un frate, Ralf Schumacher, cei doi fiind unicii frati care au castigat curse în Formula 1, si au devenit primii frati care au terminat pe primele doua pozitii in aceasi cursa, o performanta pe care au mai repetat-o de patru ori..In decembrie 2013, Schumacher a suferit o trauma serioasa la cap in timp ce schia în statiunea Meribel, din alpii francezi. El a fost transportat pe cale aeriana la spital, operat si indus în stare coma artificiala. Dupa ce s-a aflat in coma din 29 decembrie 2013 pana pe 16 iunie 2014, el a parasit spitalul din Grenoble pentru a se reabilita in continuare la Spitalul Universitatii din Lausanne, Elvetia.</h1>		
-		</article>
-	</div>
+	<?php include('hisPilotDB.php');?>
 	<h1><font size="6">Alti piloti marcanti pot fi gasiti la acest<a href="https://ro.wikipedia.org/wiki/Formula_1#Cei_mai_reprezentativi_pilo.C8.9Bi_de_Formula_1"> link</a></font></h1>
   </div>
 </div>

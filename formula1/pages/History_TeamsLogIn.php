@@ -40,7 +40,7 @@
 		  <li style="float: right;"><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
 				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="index.php?logout='1'" style="color: red;">Parasire</a> </p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">Parasire</a> </p>
 			<?php endif ?>
 		  </li>
       </li>

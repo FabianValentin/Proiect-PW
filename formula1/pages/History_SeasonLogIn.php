@@ -34,17 +34,19 @@
         <ul>
           <li class="active"><a href="History_SeasonLogIn.php">Sezon</a></li>
           <li><a href="History_PilotsLogIn.php">Piloti</a></li>
-	  <li><a href="History_TeamsLogIn.php">Echipe</a></li>
+		  <li class="last"><a href="History_TeamsLogIn.php">Echipe</a></li>
         </ul>
 		<?php if (!isset($_SESSION['username'])) :?>
 		<li class="last"><a href="LogIn_Register.php">Vrei sa te inregistrezi/autentifici?</a></li>
 		<?php endif ?>
-		<li style="float: right;"><!-- logged in user information -->
+		<div>
+		  <li style="float: right;"><!-- logged in user information -->
 			<?php  if (isset($_SESSION['username'])) : ?>
 				<p>Bun venit, <strong><?php echo $_SESSION['username']; ?></strong></p>
-				<p> <a href="index.php?logout='1'" style="color: red;">Parasire</a> </p>
+				<p> <a href="indexLogIn.php?logout='1'" style="color: red;">Parasire</a> </p>
 			<?php endif ?>
 		  </li>
+		</div>
       </li>
     </ul>
     <br class="clear" />

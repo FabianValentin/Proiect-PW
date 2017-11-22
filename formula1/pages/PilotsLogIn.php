@@ -82,26 +82,27 @@
 					}
 				?>
 					<div class="stars">
-					<input type="radio" name="star1" class="star-1" id="star-1"  value=1>
-					<label class="star-1" for="star-1">1</label>
+					<input type="radio" name="star1" class="star-1" id="star-11"  value=1>
+					<label class="star-1" for="star-11">1</label>
 					
-					<input type="radio" name="star1" class="star-2" id="star-2"  value=2>
-					<label class="star-2" for="star-2">2</label>
+					<input type="radio" name="star1" class="star-2" id="star-12"  value=2>
+					<label class="star-2" for="star-12">2</label>
 				
-					<input type="radio" name="star1" class="star-3" id="star-3"  value=3>
-					<label class="star-3" for="star-3">3</label>
+					<input type="radio" name="star1" class="star-3" id="star-13"  value=3>
+					<label class="star-3" for="star-13">3</label>
 				
-					<input type="radio" name="star1" class="star-4" id="star-4"  value=4>
-					<label class="star-4" for="star-4">4</label>
+					<input type="radio" name="star1" class="star-4" id="star-14"  value=4>
+					<label class="star-4" for="star-14">4</label>
 				
-					<input type="radio" name="star1" class="star-5" id="star-5"  value=5>
-					<label class="star-5" for="star-5">5</label>
+					<input type="radio" name="star1" class="star-5" id="star-15"  value=5>
+					<label class="star-5" for="star-15">5</label>
 					<span></span>
 					</div>
 					<input name="rateAlo" type="submit" id="rate" value="Rate Me" />
 				</form>
 			<?php endif ?>
 		</div>
+		
 		<div class="container">
 			<img src="../pilots/bot.jpg" alt="Avatar" class="image" style="width:100%">
 			<div class="middle">
@@ -128,19 +129,103 @@
 				}
 			  ?>
 				<div class="stars">
-				<input type="radio" name="star" class="star-1" id="star1" value=1>
-				<label class="star-1" for="star1">1</label>
-				<input type="radio" name="star" class="star-2" id="star2" value=2>
-				<label class="star-2" for="star2">2</label>
-				<input type="radio" name="star" class="star-3" id="star3" value=3>
-				<label class="star-3" for="star3">3</label>
-				<input type="radio" name="star" class="star-4" id="star4" value=4>
-				<label class="star-4" for="star4">4</label>
-				<input type="radio" name="star" class="star-5" id="star5" value=5>
-				<label class="star-5" for="star5">5</label>
+				<input type="radio" name="star" class="star-1" id="star-21" value=1>
+				<label class="star-1" for="star-21">1</label>
+				<input type="radio" name="star" class="star-2" id="star-22" value=2>
+				<label class="star-2" for="star-22">2</label>
+				<input type="radio" name="star" class="star-3" id="star-23" value=3>
+				<label class="star-3" for="star-23">3</label>
+				<input type="radio" name="star" class="star-4" id="star-24" value=4>
+				<label class="star-4" for="star-24">4</label>
+				<input type="radio" name="star" class="star-5" id="star-25" value=5>
+				<label class="star-5" for="star-25">5</label>
 				<span></span>
 				</div>
 				<input name="rateBot" type="submit" id="rate" value="Rate Me" />
+			</form>
+		</div>
+
+		<div class="container">
+			<img src="../pilots/vet.jpg" alt="Avatar" class="image" style="width:100%">
+			<div class="middle">
+				<div class="text">Sebastian Vettel </div>
+			</div>
+			<form action="#" method="post">
+			<?php
+				include "../connect.php";
+				if(isset($_POST['rateVet'])){
+					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
+					$result = mysqli_query($con, "select * from pilots WHERE id = 3");
+					$points=0;
+					$votes=0;
+					while($row = mysqli_fetch_assoc($result)) {
+						echo $row["name"];
+						$points = $row["points"];					
+						$votes = $row["votes"];
+					}
+					$selected_val=$selected_val+$points;
+					$votes=$votes+1;
+					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 3";
+					mysqli_query($con,$sql);
+
+				}
+			  ?>
+				<div class="stars">
+				<input type="radio" name="star" class="star-1" id="star-31" value=1>
+				<label class="star-1" for="star-31">1</label>
+				<input type="radio" name="star" class="star-2" id="star-32" value=2>
+				<label class="star-2" for="star-32">2</label>
+				<input type="radio" name="star" class="star-3" id="star-33" value=3>
+				<label class="star-3" for="star-33">3</label>
+				<input type="radio" name="star" class="star-4" id="star-34" value=4>
+				<label class="star-4" for="star-34">4</label>
+				<input type="radio" name="star" class="star-5" id="star-35" value=5>
+				<label class="star-5" for="star-35">5</label>
+				<span></span>
+				</div>
+				<input name="rateVet" type="submit" id="rate" value="Rate Me" />
+			</form>
+		</div>
+		
+		<div class="container">
+			<img src="../pilots/ham.jpg" alt="Avatar" class="image" style="width:100%">
+			<div class="middle">
+				<div class="text">Louis Hamilton </div>
+			</div>
+			<form action="#" method="post">
+			<?php
+				include "../connect.php";
+				if(isset($_POST['rateHam'])){
+					$selected_val = $_POST['star'];  // Storing Selected Value In Variable
+					$result = mysqli_query($con, "select * from pilots WHERE id = 4");
+					$points=0;
+					$votes=0;
+					while($row = mysqli_fetch_assoc($result)) {
+						echo $row["name"];
+						$points = $row["points"];					
+						$votes = $row["votes"];
+					}
+					$selected_val=$selected_val+$points;
+					$votes=$votes+1;
+					$sql = "UPDATE pilots SET points = $selected_val, votes = $votes WHERE id = 4";
+					mysqli_query($con,$sql);
+
+				}
+			  ?>
+				<div class="stars">
+				<input type="radio" name="star" class="star-1" id="star-41" value=1>
+				<label class="star-1" for="star-41">1</label>
+				<input type="radio" name="star" class="star-2" id="star-42" value=2>
+				<label class="star-2" for="star-42">2</label>
+				<input type="radio" name="star" class="star-3" id="star-43" value=3>
+				<label class="star-3" for="star-43">3</label>
+				<input type="radio" name="star" class="star-4" id="star-44" value=4>
+				<label class="star-4" for="star-44">4</label>
+				<input type="radio" name="star" class="star-5" id="star-45" value=5>
+				<label class="star-5" for="star-45">5</label>
+				<span></span>
+				</div>
+				<input name="rateHam" type="submit" id="rate" value="Rate Me" />
 			</form>
 		</div>
 	
@@ -175,7 +260,7 @@
           </p>
           <p>
             <textarea name="comment" id="comment" cols="100%" rows="10"></textarea>
-            <label for="comment" style="display:none;"><small>Comentariu(necesar)</small></label>
+            <label for="comment" style="display:none;"><small>Comentariu</small></label>
           </p>
           <p>
             <input name="submit" type="submit" id="submit" value="Submit Form" />

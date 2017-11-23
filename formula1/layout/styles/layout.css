@@ -82,7 +82,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #content{display:block; float:left; width:600px;}
 
 
-#comments{margin-bottom:40px;}
+#comments{margin-bottom:40px; padding-top: 30px;}
 #comments .commentlist{margin:0; padding:0;}
 #comments .commentlist ul{margin:0; padding:0; list-style:none;}
 #comments .commentlist li.comment_odd, #comments .commentlist li.comment_even{margin:0 0 10px 0; padding:15px; list-style:none;}
@@ -90,7 +90,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #comments .commentlist li.comment_odd a{color:#D51D29; background-color:#F3F3F3;}
 #comments .commentlist li.comment_even{color:#666666; background-color:#E8E8E8;}
 #comments .commentlist li.comment_even a{color:#D51D29; background-color:#E8E8E8;}
-#comments .commentlist .author .name{font-weight:bold;}
+#comments .commentlist .author .name{font-weight:bold; text-align:left;}
 #comments .commentlist .submitdate{font-size:smaller;}
 #comments .commentlist p{margin:10px 5px 10px 0; padding:0; font-weight:normal; text-transform:none;}
 #comments .commentlist li .avatar{float:right; border:1px solid #EEEEEE; margin:0 0 0 10px;}
@@ -145,13 +145,15 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  margin: 5% auto 5% auto; /* 5% from the top */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .middle {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 50%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
@@ -168,6 +170,8 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 .c {
 	background: url(../../images/demo/background.png) repeat 50% 0 #000;
 }
+
+
 .cont {
 	background-color: #ff4d4d;
 	padding-left: 80px;
@@ -180,13 +184,14 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .text {
-  background-color: #4CAF50;
+  background-color: red;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
 }
 
 .formtext {
+	color: black;
 	line-height: 1.3;
 	font-size: 20px;
 	font-family: 'El Messiri';
@@ -344,3 +349,45 @@ button:hover {
 	font-family: 'El Messiri';
 }
 
+.race {
+	display:block;
+	color:gray;
+	font-size:30px;
+	line-height:72px;
+	margin:0 0 -20px 0;
+	font-family: 'El Messiri';
+}
+
+.scris {
+	display:block;
+	color:black;
+	font-size:20px;
+	margin:0 0 -20px 0;
+	padding-bottom: 15px;
+	font-family: 'El Messiri';
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+	font-family: 'El Messiri' bold;
+	color: black;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.containere {
+  text-align: center;
+  padding: 10px 20px;
+  font-family: 'El Messiri';
+  font-size: 20px;
+  display:block;
+  line-height:20px;
+}

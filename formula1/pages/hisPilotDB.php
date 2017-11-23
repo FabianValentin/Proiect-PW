@@ -14,15 +14,15 @@
 		echo $str0;
 		$str0="";
 		
-		$str1 .='<li><img src="'.$row["pathPict"].'" alt="" /></li>
-				<li><font size="4"><a href="'.$row["linkPath"].'">'.$row["pilotName"].'</a></font></li>';
+		$str1 .='<div class="polaroid"><li><img src="'.$row["pathPict"].'" alt="" /></li>
+				<li><font size="4" ><a style="color:black;background:none"  href="'.$row["linkPath"].' ">'.$row["pilotName"].'</a></font></li></div>';
 		echo $str1;	
 		$str1="";
 		
 		$str2 .= '	</ul>
 				 </nav>
 				<article class="article">
-					<h1>'.$row["description"].'</h1>
+					<h1 style="color:black">'.$row["description"].'</h1>
 				</article>
 				</div>';		
 		echo $str2;	

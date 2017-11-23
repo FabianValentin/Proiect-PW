@@ -11,7 +11,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="index.php"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="index.php"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -45,9 +45,9 @@
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
  <div id="container">
-   <?php include('errors.php'); ?>
   <div id="SignUp" class="wrapper col5" style="display:block">
 	<div align="center" class="title">Formular de inregistrare</div><pre></pre>
+	<?php include('errors.php'); ?>
 	<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc" class="c">
 	
 	<div class="cont">
@@ -77,9 +77,8 @@
 </div> 
 	<div id="LogIn" class="wrapper col5" style="display:none">
 		<div align="center" class="title">Formular de autentificare</div><pre></pre>
-		<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc" class="c"> 	
-	
 		<?php include('errors.php'); ?>
+		<form action="LogIn_Register.php" method="post" style="border:1px solid #ccc" class="c"> 	
 	
 		<div class="cont">
 		<label class="formtext">Nume de utilizator</label>

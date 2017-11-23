@@ -14,17 +14,17 @@
 		echo $str0;
 		$str0="";
 		
-		$str1 .='<div class="author"><img class="avatar" src="../images/demo/avatar.png" width="32" height="32" alt="" /><span class="name">Utilizatorul: '.$row["nameUser"].'</span> <span class="wrote">a scris:</span></div>';
+		$str1 .='<div class="author"><img class="avatar" src="../images/demo/avatar.png" width="32" height="32" alt="" /><span class="name" style="color:red">'.$row["nameUser"].'</span> <span class="wrote">a scris:</span></div>';
 		echo $str1;	
 		$str1="";
-		
-		$str2 .= '<div class="submitdate">'.$row["comm_date"].'</div>';		
-		echo $str2;	
-		$str2="";
 		
 		$str3 .='<p>'.$row["comment"].'</p>';
 		echo $str3;	
 		$str3="";
+		
+		$str2 .= '<div class="submitdate" align="right">'.$row["comm_date"].'</div>';		
+		echo $str2;	
+		$str2="";
 		
 		$str4=" </li>
 			</ul>";

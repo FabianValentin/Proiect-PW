@@ -18,7 +18,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="indexLogIn.php"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="indexLogIn.php"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -49,15 +49,15 @@
   </div>
 </div>
 <div class="wrapper col5">
-   <div id="container">
-    <h1 align="center"><font size="6" >Cele mai importante echipe</font></h1>
+   <div id="container" align="center">
+    <div class="title"  style="padding-bottom:15px">Cele mai importante echipe</div><pre></pre>
 	<p></p>
     <div class="flex-container">
-		<font size="5"><a style="color:black" href="https://ro.wikipedia.org/wiki/Red_Bull_Racing" >Red Bull Racing</a></style></font>
+		<div class="race" ><a style="color:black" href="https://ro.wikipedia.org/wiki/Red_Bull_Racing" target="_blank">Red Bull Racing</a></div>
 		<nav class="nav">
 			<ul>
 				<h1>Logo</h1>
-				<li><img src="../teams/redbull.jpg" alt="" /></li>
+				<li style="padding-top: 38px; padding-bottom: 30px"><img src="../teams/redbull.png" alt="" /></li>
 				<h1>Monopost</h1>
 				<li><img src="../teams/redbullCar.jpg" alt="" /></li>
 				
@@ -78,12 +78,12 @@
 		</article>
    </div>
 	<p></p>
-   <div class="flex-container">
-		<font size="5" style="samp"><a style="color:black" href="https://ro.wikipedia.org/wiki/Scuderia_Ferrari">Scuderia Ferrari</a></font>
+   <div class="flex-container"> <pre></pre>
+		<div class="race" ><a style="color:black" href="https://ro.wikipedia.org/wiki/Scuderia_Ferrari" target="_blank">Scuderia Ferrari</a></div>
 		<nav class="nav">
 			<ul>
 				<h1>Logo</h1>
-				<li><img src="../teams/ferrari.png" alt="" /></li>
+				<li ><img src="../teams/ferrari.png" alt="" /></li>
 				<h1>Monopost</h1>
 				<li><img src="../teams/ferrariCar.jpg" alt="" /></li>
 			</ul>
@@ -101,9 +101,10 @@
 		   </nav>	
 	      </div>
 		</article>
-   </div>
+	 </div>
 </div>
-<div class="wrapper col6">
+	<h1 style="text-align:center"><font size="6">Alte echipe reprezentative pot fi gasite la acest<a style="color:black;" href="https://ro.wikipedia.org/wiki/Formula_1#Cele_mai_reprezentative_echipe_de_Formula_1" target="_blank"> link</a></font></h1>
+  <div class="wrapper col6">
   <div id="footer">
     <div id="newsletter">
       <h2>Ramai informat!</h2>
@@ -126,7 +127,7 @@
       </ul>
     </div>
     <br class="clear" />
-  </div>
+	 </div>
 </div>
 </body>
 </html>

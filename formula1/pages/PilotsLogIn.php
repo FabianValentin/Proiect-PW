@@ -19,7 +19,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="#"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="#"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -54,13 +54,13 @@
   </div>
 </div>
 <div class="wrapper col5">
-  <div id="container">
-    <div id="content">
-      <h1>Voteaza-ti pilotul favorit</h1>
-		<div class="container">
+  <div align="center" class="title" style="padding-top: 15px">Voteaza pilotul favorit</div>;
+  <div id="container" style="padding-left: 350px">
+    <div id="content" >
+		<div style="padding-left: 150px" class="container" >
 			<img src="../pilots/alo.jpg" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
-				<div class="text">Fernando Alonso </div>
+			<div class="middle" style="padding-left: 150px">
+				<div class="text" >Fernando Alonso </div>
 			</div>
 			<?php if (isset($_SESSION['username'])) : ?>
 				<form action="#" method="post">
@@ -102,10 +102,10 @@
 				</form>
 			<?php endif ?>
 		</div>
-		
-		<div class="container">
+		<pre></pre>
+		<div style="padding-left: 150px" class="container" >
 			<img src="../pilots/bot.jpg" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
+			<div class="middle" style="padding-left: 150px">
 				<div class="text">Valtteri Bottas </div>
 			</div>
 			<?php if (isset($_SESSION['username'])) : ?>
@@ -118,7 +118,6 @@
 					$points=0;
 					$votes=0;
 					while($row = mysqli_fetch_assoc($result)) {
-						echo $row["name"];
 						$points = $row["points"];					
 						$votes = $row["votes"];
 					}
@@ -146,10 +145,10 @@
 			</form>
 			<?php endif ?>
 		</div>
-
-		<div class="container">
+		<pre></pre>
+		<div style="padding-left: 150px" class="container" >
 			<img src="../pilots/vet.jpg" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
+			<div class="middle" style="padding-left: 150px">
 				<div class="text">Sebastian Vettel </div>
 			</div>
 			<?php if (isset($_SESSION['username'])) : ?>
@@ -162,7 +161,6 @@
 					$points=0;
 					$votes=0;
 					while($row = mysqli_fetch_assoc($result)) {
-						echo $row["name"];
 						$points = $row["points"];					
 						$votes = $row["votes"];
 					}
@@ -190,10 +188,10 @@
 			</form>
 			<?php endif ?>
 		</div>
-		
-		<div class="container">
+		<pre></pre>
+		<div style="padding-left: 150px" class="container" >
 			<img src="../pilots/ham.jpg" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
+			<div class="middle" style="padding-left: 100px">
 				<div class="text">Louis Hamilton </div>
 			</div>
 			<?php if (isset($_SESSION['username'])) : ?>
@@ -206,7 +204,6 @@
 					$points=0;
 					$votes=0;
 					while($row = mysqli_fetch_assoc($result)) {
-						echo $row["name"];
 						$points = $row["points"];					
 						$votes = $row["votes"];
 					}
@@ -234,9 +231,11 @@
 			</form>
 			<?php endif ?>
 		</div>
-	
-      <h2>Clasamentul favoritilor</h2>
-      <table summary="Summary Here" cellpadding="0" cellspacing="0">
+	  <pre></pre>
+	  <pre></pre>
+      <div align="center" class="title" style="padding-top: 15px">Favoritii utilizatorilor nostri</div>
+	  <div class="scris"> Vrei sa votezi pilotul preferat? Trebuie mai intai sa te autentifici. </div> <pre></pre>
+      <table summary="Summary Here" cellpadding="0" cellspacing="0" class="tabel">
         <thead>
           <tr>
             <th>Pilot</th>
@@ -250,14 +249,16 @@
         </tbody>
       </table>
       <div id="comments">
-        <h2>Comments</h2>
+	   <pre></pre>
+       <div class="title" align="center" style="padding-top: 15px">Comentarii</div>
+	   <div class="scris"> Vrei sa lasi un comentariu? Trebuie mai intai sa te autentifici. </div> <pre></pre>
        
 			<?php include("pilotsComDB.php")?>
 		 
       </div>
 	 <?php if (isset($_SESSION['username'])) : ?> 
 	  <?php include('pilotsCommInsert.php');?>
-      <h2>Scrie un comentariu</h2>
+      <h2>Scrie un comentariu si sustine-ti favoritul!</h2>
       <div id="respond">
         <form action="PilotsLogIn.php" method="post">
           <p>
@@ -285,7 +286,7 @@
   <div id="footer">
     <div id="newsletter">
       <h2>Ramai informat!</h2>
-      <p>Te rog introdu-ti emailul pentru a te inregistra in lista noastra</p>
+      <p>Introdu-ti emailul pentru a te inregistra in lista noastra</p>
       <form action="PilotsLogIn.php" method="post">
         <fieldset>
           <legend>News Letter</legend>

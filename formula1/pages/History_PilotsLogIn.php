@@ -17,7 +17,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="#"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="#"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -28,7 +28,7 @@
       <li><a href="indexLogIn.php">Acasa</a></li>
       <li><a href="PilotsLogIn.php">Piloti</a><span>Voteaza-ti favoritul</span></li>
       <li><a href="SeasonLogIn.php">Sezon</a><span>Urmareste sezonul</span></li>
-      <li><a href="#">Istoria</a>
+      <li><a href="#">Istorie</a>
         <ul>
           <li><a href="History_SeasonLogIn.php">Sezon</a></li>
           <li class="active"><a href="History_PilotsLogIn.php">Piloti</a></li>
@@ -52,10 +52,10 @@
 </div>
 <div class="wrapper col5">
   <div id="container">
-    <h1><font size="6">The most important pilots</font></h1>
+    <div class="title"  style="padding-bottom:15px;text-align:center">Cei mai importanti piloti</div><pre></pre>
 	<?php include('hisPilotDB.php');?>
-	<h1><font size="6">Alti piloti marcanti pot fi gasiti la acest<a href="https://ro.wikipedia.org/wiki/Formula_1#Cei_mai_reprezentativi_pilo.C8.9Bi_de_Formula_1"> link</a></font></h1>
-  </div>
+	  </div>
+	  <h1 style="text-align:center"><font size="6">Alti piloti marcanti pot fi gasiti la acest<a style="color:black" href="https://ro.wikipedia.org/wiki/Formula_1#Cei_mai_reprezentativi_pilo.C8.9Bi_de_Formula_1"> link</a></font></h1>
 </div>
 <!-- ####################################################################################################### -->
 <div class="wrapper col6">

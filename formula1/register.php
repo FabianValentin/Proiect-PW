@@ -23,14 +23,14 @@ $errors = array();
 	$pass2 = mysqli_real_escape_string($condb,$_POST['psw2']);
 	
 	// form validation: ensure that the form is correctly filled
-	if (empty($realname)) { array_push($errors, "Your name is required"); }
-	if (empty($usern)) { array_push($errors, "Username is required"); }
-	if (empty($mail)) { array_push($errors, "Email is required"); }
-	if (empty($pass1)) { array_push($errors, "Password is required"); }
-	if (empty($pass2)) { array_push($errors, "Password confirmation is required"); }
+	if (empty($realname)) { array_push($errors, "Completati casuta cu numele"); }
+	if (empty($usern)) { array_push($errors, "Completati casuta cu username-ul"); }
+	if (empty($mail)) { array_push($errors, "Completati casuta cu adresa de email"); }
+	if (empty($pass1)) { array_push($errors, "Completati casuta cu parola"); }
+	if (empty($pass2)) { array_push($errors, "Completati casuta cu parola de confirmare"); }
 	
 	if ($pass1 != $pass2) {
-			array_push($errors, "The two passwords do not match");
+			array_push($errors, "Cele doua parole nu se potrivesc");
     }
 	
 	if (count($errors) == 0) {
@@ -48,10 +48,10 @@ $errors = array();
 	$password = mysqli_real_escape_string($condb, $_POST['pswd']);
 
 	if (empty($username)) {
-		array_push($errors, "Username is required");
+		array_push($errors, "Completati casuta cu username-ul");
 	}
 	if (empty($password)) {
-		array_push($errors, "Password is required");
+		array_push($errors, "Completati casuta cu parola");
 	}
 	
 	if (count($errors) == 0) {
@@ -64,7 +64,7 @@ $errors = array();
 			header('location: indexLogIn.php');
 			
 		}else {
-			array_push($errors, "Wrong username/password combination");
+			array_push($errors, "Combinatie username/parola inexistenta");
 		}
 	}
   }

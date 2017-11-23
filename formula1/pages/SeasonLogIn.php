@@ -17,7 +17,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="#"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="#"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -53,7 +53,7 @@
 </div>
 <div class="wrapper col5">
   <div id="container">
-    <h1><font size="7">Sezonul curent</font><action="Season.php"></h1>
+    <div class="title" align="center">Cursele sezonului curent</div><pre></pre>
     <ul>	
 		<?php include("racesDB.php")?>
 	</ul>

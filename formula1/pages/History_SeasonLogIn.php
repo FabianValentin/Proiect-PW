@@ -20,7 +20,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="#"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="#"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -53,14 +53,15 @@
   </div>
 </div>
 <div class="wrapper col5">
-  <div id="container" >
+  <div id="container" align="center">
+	<div class="title"  style="padding-bottom:15px">Momente remarcabile in istoria acestui sport</div><pre></pre>
 	<img src="../images/demo/first.jpg" alt="Avatar" class="Avatar" onclick="document.getElementById('hisSea2').style.display='block'">
 	<img src="../images/demo/crash.jpg" alt="Avatar" class="Avatar" onclick="document.getElementById('hisSea').style.display='block'">
 	<img src="../images/demo/bernie.jpg" alt="Avatar" class="Avatar" onclick="document.getElementById('hisSea3').style.display='block'">
 	<img src="../images/demo/sena.jpg" alt="Avatar" class="Avatar" onclick="document.getElementById('hisSea4').style.display='block'">
   </div>
   <div id="hisSea" class="modal">
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="/action_page.php"> 
     <div class="imgcontainer">
       <span onclick="document.getElementById('hisSea').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="../images/demo/crash.jpg" alt="Avatar" class="avatar">
@@ -104,7 +105,7 @@
 </div>
 
 <div id="hisSea3" class="modal">
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="/action_page.php">  
     <div class="imgcontainer">
       <span onclick="document.getElementById('hisSea3').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="../images/demo/bernie2.jpg" alt="Avatar" class="avatar">
@@ -125,7 +126,6 @@
 
 <div id="hisSea4" class="modal">
   <form class="modal-content animate" action="/action_page.php">
-   <div><p><font size="3">Ayrton Senna </p></div>   
    <div class="imgcontainer">
       <span onclick="document.getElementById('hisSea4').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="../images/demo/sena2.jpg" alt="Avatar" class="avatar">

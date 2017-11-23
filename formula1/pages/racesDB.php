@@ -5,19 +5,20 @@
 	$str1 = "";
 	$str2 = "";
 	$str3 = "";
+	$count = 1;
 	while($row = mysqli_fetch_assoc($result)) {
 				
-		$str1 .='<div align="center"> <font size="6">'.$row["name"].' '.$row["location"].'</font></div><pre></pre><pre></pre>';
+		$str1 .='<div align="center" class="race">'.$count.'. '.$row["location"].'</div><pre></pre><pre></pre>';
 		echo $str1;	
 		$str1="";
 		
-		$str2 .= '<div align="center"> <img src='.$row["picturePath"].' alt= "" width="600px"/> </div><pre></pre>';		
+		$str2 .= '<div align="center"> <div class="polaroid"> <img src='.$row["picturePath"].' alt= "" width="100%"/>';		
 		echo $str2;	
 		$str2="";
 		
-		$str3 .='<div><font size="3">'.$row["description"].'</font></div> <pre></pre><pre> </pre>';
+		$str3 .='<div class="containere">'.$row["description"].'</div></div></div> <pre></pre><pre> </pre>';
 		echo $str3;	
 		$str3="";
-	
+		$count = $count + 1;
 	}
 	mysqli_close($con);

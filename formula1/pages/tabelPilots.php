@@ -7,7 +7,7 @@
 	$str3 = "";
 	while($row = mysqli_fetch_assoc($result)) {
 		
-		$str0 .='<tr class="light"><td>' .$row["name"]. '</td>';
+		$str0 .='<tr><td>' .$row["name"]. '</td>';
 		echo $str0;
 		$str0="";
 		

@@ -21,7 +21,7 @@
 <body id="top">
 <div class="wrapper col2">
   <div id="header">
-    <div> <a href="indexLogIn.php"><img src="../images/demo/Formula-1-Logo.png" alt="" /></a> </div>
+    <div> <a href="indexLogIn.php"><img src="../images/demo/Formula1-Logo.png" alt="" /></a> </div>
     <br class="clear" />
   </div>
 </div>
@@ -68,23 +68,25 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-      <h1 align= "center">Despre acest sport impresionant</h1>
-      <p><font size="3">  Formula 1 (abreviata F1) este o intrecere de automobilism care se
+    <div class="title" style="padding-bottom:15px" align= "center">Despre acest sport impresionant</div>
+      <p align= "center"><font size="3">  Formula 1 (abreviata F1) este o intrecere de automobilism care se
 		  organizeaza anual sub forma a doua campionate mondiale, care au loc
  		  in paralel, ambele fiind patronate de Federatia Internationala a 
 		  Automobilului (FIA). </p>
-	  <p><font size="3">  
+	  <p align= "center"><font size="3" >  
 			Numele de Formula provine de la faptul ca toate echipele inscrise
 		  in campionat trebuie sa isi construiasca masinile (cunoscute si sub
 		  numele de monoposturi) dupa un anumit regulament, o formula pe care
 		  o decide FIA. Cifra 1 provine de la faptul ca intrecerea este 
 		  catalogata drept cea mai prestigioasa formula organizata de FIA.
 	  </p>
+	  <p align= "center"><font size="3">
 			Cele doua campionate sunt Campionatul Mondial al Pilotilor (engl:
 		  World Drivers' Championship) si Campionatul Mondial al Constructorilor
 		  (engl. World Constructors' Championship). In actuala editie a 
 		  campionatului participa 10 echipe si 20 piloti.
-	 <p><font size="3">
+	</p>
+	 <p align= "center"><font size="3">
 			Formula 1 este un sport cu mare trecere la public. Toate etapele campionatului 
 			sunt televizate in mai mult de 200 de tari, numarul celor care privesc anual 
 			intrecerea fiind depasit doar de numarul celor care urmaresc meciurile din
@@ -93,17 +95,17 @@
     </div>
     <div id="column">
       <div class="holder">
-        <h2>Ultimele informatii</h2>
+        <div class="title"><h2><font size="5">Ultimele informatii</font></h2></div>
         <ul id="latestnews">
           <li><img class="imgl" src="../images/demo/images(5).jpg" alt="" />
             <p><strong>Aproape campion</strong></p>
             <p>Hamilton este la o victorie distanta de a-si pastra titlul</p>
-            <p class="readmore"><a href="#">Continua sa citesti &raquo;</a></p>
+            <p class="readmore"><a href="http://www.automarket.ro/formula1/" target="_blank">Continua sa citesti &raquo;</a></p>
           </li>
           <li class="last"><img class="imgl" src="../images/demo/download(3).jpg" alt="" />
             <p><strong>Vettel, inca un pas gresit</strong></p>
             <p>Vettel, inca un pas gresit</p>
-            <p class="readmore"><a href="#">Continua sa citesti &raquo;</a></p>
+            <p class="readmore"><a href="http://www.automarket.ro/formula1/" target="_blank">Continua sa citesti &raquo;</a></p>
           </li>
         </ul>
       </div>
